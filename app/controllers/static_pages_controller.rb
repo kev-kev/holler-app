@@ -9,6 +9,5 @@ class StaticPagesController < ApplicationController
   end
 
   def content
-
   end
 end
