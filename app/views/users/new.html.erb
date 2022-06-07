@@ -1,3 +1,14 @@
 <% provide(:title, "sign up") %>
 <h1>sign up</h1>
-<p>this is your sign</p>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :name, "name" %><br/>
+  <%= form.text_field :name %> <br/>
+  <%= form.label :email, "email" %><br/>
+  <%= form.text_field :email %> <br/>
+  <%= form.label :password, "password" %><br/>
+  <%= form.password_field :password %> <br/>
+  <%= form.label :password_confirmation, "confirm password" %><br/>
+  <%= form.password_field :password_confirmation %> <br/>
+  <%= form.submit 'create user' %>
+<% end %>
