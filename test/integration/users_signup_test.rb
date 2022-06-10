@@ -37,3 +37,4 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_template "users/show"
     assert flash.any?
   end
+end
