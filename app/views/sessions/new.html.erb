@@ -8,7 +8,12 @@
       <%= form.label :password %>
       <%= form.password_field :password, class: "form-control" %>
 
-      <%= form.submit "log in", class: "btn btn-primary"%>
+      <%= form.label :remember_me, class: "checkbox-inline" do %>
+        <%= form.check_box :remember_me %>
+        <span>remember me?</span>
+      <% end %>
+
+      <%= form.submit "log in", class: "btn btn-primary", id: "submit" %>
     <% end %>
 
     <p>new user? <%= link_to "sign up now!", signup_path %></p>
