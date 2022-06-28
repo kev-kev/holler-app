@@ -1,4 +1,4 @@
-testuser:
+test_user:
   name: Jean Dean
   email: meanjean@green.bean
   password_digest: <%= User.digest('password') %>
