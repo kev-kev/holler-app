@@ -8,18 +8,26 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the sample app!"
-      redirect_to @user
+      redirect_to @userco
     else
       render new_user_path, status: 400
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def index
     @users = User.all
   end
 
-  def show
+  def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+
   end
   
   private
