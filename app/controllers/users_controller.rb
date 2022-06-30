@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "welcome to the sample app!"
-      redirect_to @userco
+      redirect_to @user
     else
       render new_user_path, status: 400
     end
