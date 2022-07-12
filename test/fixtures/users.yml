@@ -2,6 +2,7 @@ test_user1:
   name: Jean Dean
   email: meanjean@green.bean
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 test_user2:
   name: Hamon Buchanon
