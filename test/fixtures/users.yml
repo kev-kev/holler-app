@@ -7,3 +7,20 @@ test_user2:
   name: Hamon Buchanon
   email: hamonthecannon@salmon.famine
   password_digest: <%= User.digest('password') %>
+
+test_user3:
+  name: Buddy Valastro
+  email: bossofcakes@cake.boss
+  password_digest: <%= User.digest('password') %>
+
+test_user4:
+  name: Lord Andrew Lloyd Webber
+  email: starlight_phantom@superstar.cats
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+test_user<%= n+5 %>:
+ name: <%= "User #{n+5}" %>
+ email: <%= "user-#{n+5}@spoofy.forger" %>
+ password_digest: <%= User.digest('password') %>
+<% end %>
