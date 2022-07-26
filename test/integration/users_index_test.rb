@@ -8,10 +8,13 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
   
   test "index as admin, including pagination and deleting" do
     log_in_as(@user)
+    first_page = User.paginate(page: 1)
+    first_page.first.toggle!(:activated)
     get users_path
     assert_template "users/index"
     assert_select "div.pagination", count: 2
-    User.paginate(page: 1).each do |user|
+    assigns(:users).each do |user|
+      assert user.activated?
       assert_select 'a[href=?]', user_path(user), text: user.name
       unless user == @user
         assert_select 'a[href=?]', user_path(user), text: 'delete'
