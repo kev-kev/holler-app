@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
+
   attr_accessor :remember_token, :activation_token, :reset_token
+
   before_save :downcase_email
   before_create :create_activation_digest
 
@@ -7,8 +10,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-  has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  has_secure_password
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST
