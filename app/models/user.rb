@@ -60,6 +60,11 @@ class User < ApplicationRecord
   def password_reset_expired?
     sent_at < 2.hours.ago
   end
+
+  def feed
+    Micropost.includes(:user).where("user_id = ?", id)
+  end
+  
   private
   def downcase_email
     email.downcase!
