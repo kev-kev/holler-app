@@ -23,7 +23,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
         { content: "hihi", image: image } 
       }
     end
-    assert micropost.image.attached?
+    assert @user.microposts.first.image.attached?
     assert_redirected_to root_path
     follow_redirect!
     assert_match 'hihi', response.body
