@@ -10,17 +10,17 @@ another:
 
 cake:
  content: "im the boss of cakes!"
- user: test_user1
+ user: test_user3
  created_at: <%= 2.hours.ago %>
 
 most_recent:
  content: "hihihihihomg"
- user: test_user1
+ user: test_user3
  created_at: <%= 2.minutes.ago %>
 
 <% 30.times do |n| %>
 micropost_<%= n %>:
-  content: <%= Faker::Lorem.sentence(word_count: 5) %>
-  created_at: <%= 68.days.ago %>
-  user: test_user1
+ content: <%= Faker::Lorem.sentence(word_count: 5) %>
+ created_at: <%= 68.days.ago %>
+ user: test_user1
 <% end %>
