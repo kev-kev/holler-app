@@ -6,12 +6,13 @@
         <%= gravatar_for @user %>
         <%= @user.name %>'s page
       </h1>
-      <h1><%= @user.email %></h1>
-      <p> created at: <%= @user.created_at.strftime("%m/%d/%Y at %I:%M%P") %></p>
-      <p> last updated: <%= @user.updated_at.strftime("%m/%d/%Y at %I:%M%P") %></p>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
     </section>
   </aside>
   <div class="col-md-8">
+    <%= render "follow_form" if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
