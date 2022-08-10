@@ -68,7 +68,11 @@ class User < ApplicationRecord
   end
 
   def feed
-    Micropost.includes(:user).where("user_id = ?", id)
+    following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+    Micropost.includes(:user).where(
+      "user_id IN (#{following_ids}) OR user_id = :user_id",
+      user_id: id
+    )
   end
 
   def follow(other_user)
@@ -82,7 +86,7 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-  
+
   private
   def downcase_email
     email.downcase!
