@@ -7,8 +7,6 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   def check_basic_links
     assert_select "a[href=?]", root_path, count: 2
-    assert_select "a[href=?]", help_path
-    assert_select "a[href=?]", about_path
     assert_select "a[href=?]", contact_path 
   end
 
@@ -31,16 +29,12 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   test "page titles and templates when signed out" do
     get root_path
-    assert_select "title", "rails sample app"
+    assert_select "title", "holler"
     assert_template 'static_pages/home'
 
     get contact_path
     assert_select "title", full_title("contact")
     assert_template 'static_pages/contact'
-
-    get help_path
-    assert_select "title", full_title("help")
-    assert_template 'static_pages/help'
 
     get signup_path
     assert_select "title", full_title("sign up")

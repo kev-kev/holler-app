@@ -1,5 +1,5 @@
-<h1>sample app</h1>
+<h1>holler</h1>
 <p>hi <%= @user.name.downcase %>,</p>
 <p>
-welcome to the sample app! click on the link below to activate your account: </p>
+welcome to the holler! click on the link below to activate your account: </p>
 <%= link_to "activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>

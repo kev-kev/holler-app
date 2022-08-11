@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", root_path, id: "logo"%>
+    <%= link_to "holler", root_path, id: "logo"%>
     <nav>
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed"
@@ -17,7 +17,6 @@
         <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
           id="bs-example-navbar-collapse-1">
           <li><%= link_to "home", root_path %></li>
-          <li><%= link_to "help", help_path %></li>
           <% if logged_in? %>
             <li><%= link_to "users", users_path %></li>
             <li class="dropdown">

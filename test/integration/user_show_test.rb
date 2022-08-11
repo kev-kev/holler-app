@@ -8,7 +8,7 @@ class UserShowTest < ActionDispatch::IntegrationTest
 
   test "should redirect if user not activated" do
     get user_path(@inactive_user)
-    assert_redirected_to root_url
+    assert_redirected_to root_path
   end
 
   test "should display if user is activated" do

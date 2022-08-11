@@ -9,7 +9,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get signup_path
     assert_response :success
-    assert_select "title", "sign up | rails sample app"
+    assert_select "title", "sign up | holler"
   end
 
   test "should redirect edit when not logged in" do
@@ -80,11 +80,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect following when not logged in" do
     get following_user_path(@user)
-    assert_redirected_to login_url
+    assert_redirected_to login_path
   end
 
   test "should redirect followers when not logged in" do
     get followers_user_path(@user)
-    assert_redirected_to login_url
+    assert_redirected_to login_path
   end
 end
