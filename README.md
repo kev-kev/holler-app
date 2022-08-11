@@ -1,24 +1,13 @@
-# README
+## Holler
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Twitter clone made with Ruby on Rails and Bootstrap
 
-Things you may want to cover:
+![Screenshot](/app/assets/images/screenshot.png)
 
-* Ruby version
+You can visit the app [here](https://holler-app.herokuapp.com/)
 
-* System dependencies
+### Starting the app
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- First, install the necessary gems with `bundle`
+- Next, setup the DB with `rails db:setup`
+- You can now start the app with `rails server`
