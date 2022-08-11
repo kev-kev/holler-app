@@ -39,14 +39,14 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
   test "microposts sidebar count" do
     log_in_as(@user)
     get root_path
-    assert_select 'span', text: "#{@user.microposts.count} microposts"
+    assert_select 'span', text: "#{@user.microposts.count} posts"
     other_user = users(:test_user2)
     log_in_as(other_user)
     get root_path
-    assert_select 'span', text: "0 microposts"
+    assert_select 'span', text: "0 posts"
     other_user.microposts.create(content: "first!")
     get root_path
-    assert_select 'span', text: "1 micropost"
+    assert_select 'span', text: "1 post"
   end
 
 end
