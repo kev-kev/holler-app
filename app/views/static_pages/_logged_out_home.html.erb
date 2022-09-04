@@ -1,5 +1,16 @@
-<div class="center jumbotron">
-  <h1>holler</h1>
-  <h2>welcome! create an account or <%= link_to "log in", login_path%></h3> 
-  <%= link_to "sign up now", signup_path, class: "btn btn-lg btn-primary" %> 
-</div>
+  <div class="container col-xxl-12 px-4">
+    <div class="row flex-lg-row align-items-center g-5 d-flex justify-content-center">
+      <div class="col-10 col-sm-8 col-xxl-6">
+        <img src="https://i.imgur.com/2pFdW1x.jpg" alt="Holler Image" class="holler-image" loading="lazy">
+      </div>
+      <div class="col-xxl-4">
+        <h1 class="display-5 fw-bold lh-1 mb-3 text-center">welcome to holler</h1>
+        <p class="lead text-center">make yourself heard.<br />to start, create an account or login.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+          <%= link_to "sign up now", signup_path, class: "btn btn-primary btn-lg px-4 me-md-2" %> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+

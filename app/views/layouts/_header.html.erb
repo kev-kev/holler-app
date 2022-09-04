@@ -1,40 +1,42 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "holler", root_path, id: "logo"%>
-    <nav>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-          data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
-          <span class="sr-only">Toggle Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div>
-        <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1">
-          <li><%= link_to "home", root_path %></li>
-          <% if logged_in? %>
-            <li><%= link_to "users", users_path %></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "profile", current_user %></li>
-                <li><%= link_to "edit profile", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li><%= link_to "log out", logout_path, method: "delete" %></li>
-              </ul>
+<nav class="navbar navbar-expand-md navbar-dark bg-primary" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <%= link_to "holler", root_path, id: "logo", class: "navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars04" aria-controls="navbars04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-right" id="navbars04">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0 me-md-2">
+        <li class="nav-item">
+          <%= link_to "home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "contact", contact_path, class: "nav-link" %>
+        </li>
+        <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "users", users_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">account</a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to "profile", current_user, class: "dropdown-item" %>
             </li>
-          <% else %>
-            <li><%= link_to "log in", login_path %></li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
+            <li>
+              <%= link_to "edit profile", edit_user_path(current_user), class: "dropdown-item" %>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "log out", logout_path, method: "delete", class: "dropdown-item" %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "log in", login_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>

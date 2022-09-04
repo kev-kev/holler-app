@@ -2,11 +2,12 @@
   "name": "holler_app",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
-    "bootstrap": "3.4.1",
+    "bootstrap": "^5.2.0",
     "jquery": "3.4.1",
     "turbolinks": "^5.2.0"
   },
