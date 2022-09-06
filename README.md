@@ -2,7 +2,9 @@
 
 Twitter clone made with Ruby on Rails and Bootstrap
 
-<img src="/app/assets/images/mobile-hero.png" alt="mobile landing page" width="200""/>
+<img src="./app/assets/images/mobile-hero.png" alt="mobile landing page" width="400"/><br/>
+<img src="./app/assets/images/desktop-hero.png" alt="desktop landing page" width="400"/><br/>
+<img src="./app/assets/images/sample-feed.png" alt="sample feed" width="400"/>
 <!-- ![Mobile landing page](/app/assets/images/mobile-hero.png)
 ![Desktop landing page](/app/assets/images/desktop-hero.png)
 ![Sample feed](/app/assets/images/sample-feed.png) -->
@@ -15,3 +17,4 @@ You can visit the app [here](https://holler-app.herokuapp.com/)
 - Next, setup the DB with `rails db:setup`
 - You can now start the app with `rails server`
 
+<sub><sup>Icon images by mamewmy and dooder on Freepik</sup></sub>
