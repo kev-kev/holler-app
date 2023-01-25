@@ -9,8 +9,6 @@ Twitter clone made with Ruby on Rails and Bootstrap
 ![Desktop landing page](/app/assets/images/desktop-hero.png)
 ![Sample feed](/app/assets/images/sample-feed.png) -->
 
-You can visit the app [here](https://holler-app.herokuapp.com/)
-
 ### Starting the app
 
 - First, install the necessary gems with `bundle`
